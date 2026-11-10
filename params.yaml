@@ -1,8 +1,8 @@
 AUGMENTATION: True
 IMAGE_SIZE: [224, 224, 3] # as per VGG 16 model
 BATCH_SIZE: 16
-INCLUDE_TOP: False
-EPOCHS: 1
-CLASSES: 3
-WEIGHTS: imagenet
+INCLUDE_TOP: False  # only convulational layer
+EPOCHS: 1           #
+CLASSES: 3          
+WEIGHTS: imagenet    # pre-trained model
 LEARNING_RATE: 0.01
