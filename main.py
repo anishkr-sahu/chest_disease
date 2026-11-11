@@ -56,7 +56,7 @@ except Exception as e:
 
 STAGE_NAME = "ModelPusherPipeline"
 try:
-   logger.info(f"*******************")
+   logger.info(f"******************")
    logger.info(f">>>>>> stage {STAGE_NAME} started <<<<<<")
    model_pusher = ModelPusherTrainingPipeline()
    model_pusher.main()
