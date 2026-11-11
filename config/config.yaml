@@ -17,3 +17,8 @@ prepare_base_model:
 training:
   root_dir: artifacts/training
   trained_model_path: artifacts/training/model.h5
+
+
+model_pusher:
+  bucket_name: chest-disease-bucket
+  s3_model_key_path: model.h5

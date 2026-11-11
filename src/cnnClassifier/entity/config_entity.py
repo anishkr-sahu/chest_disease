@@ -43,3 +43,8 @@ class EvaluationConfig:
     mlflow_uri: str
     params_image_size: list
     params_batch_size: int
+
+@dataclass
+class ModelPusherConfig:
+    bucket_name: str
+    s3_model_key_path: str

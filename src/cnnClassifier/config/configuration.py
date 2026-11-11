@@ -2,11 +2,11 @@ import os
 from cnnClassifier.constants import *
 from cnnClassifier.utils.common import read_yaml, create_directories
 from cnnClassifier.entity.config_entity import (DataIngestionConfig,
-                                                 PrepareBaseModelConfig,
+                                               PrepareBaseModelConfig,
                                                  TrainingConfig,
                                                  EvaluationConfig) 
-
-
+from cnnClassifier.constants import AWS_BUCKET_NAME, MODEL_PUSHER_S3_KEY
+from cnnClassifier.entity.config_entity import ModelPusherConfig
 class ConfigurationManager:
     def __init__(
         self,
@@ -85,3 +85,10 @@ class ConfigurationManager:
             params_batch_size=self.params.BATCH_SIZE
         )
         return eval_config
+
+    def get_model_pusher_config(self) -> ModelPusherConfig:
+        model_pusher_config = ModelPusherConfig(
+            bucket_name=AWS_BUCKET_NAME,
+            s3_model_key_path=MODEL_PUSHER_S3_KEY
+        )
+        return model_pusher_config
